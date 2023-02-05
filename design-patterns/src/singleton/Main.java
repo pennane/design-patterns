@@ -15,7 +15,6 @@ public class Main {
 
 		// this errors
 		// IFactory factory3 = new FactorySingleton();
-		// these are equal
 	}
 
 }
