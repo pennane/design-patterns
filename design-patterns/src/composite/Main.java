@@ -20,9 +20,9 @@ public class Main {
 		IComponent poweri = new Psu();
 		IComponent ärGeeBeeLedit = new RgbLedThing();
 
-		IComponent emolevy = new Motherboard(prosessori, näytönohjain, ramMuisti, ssd, poweri);
+		IComponent emolevy = new Motherboard(prosessori, näytönohjain, ramMuisti, ssd);
 
-		IComponent kotelo = new Case(emolevy, ärGeeBeeLedit);
+		IComponent kotelo = new Case(emolevy, ärGeeBeeLedit, poweri);
 
 		IComponent tietokone = new Computer(kotelo);
 
