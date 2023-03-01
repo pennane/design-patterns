@@ -24,24 +24,11 @@ public class Main {
 	public static int SAMPLE_SIZE = 10000;
 
 	/**
-	 * Get random item from list
-	 */
-	public static <T> T sample(List<T> l) {
-		return l.get(ThreadLocalRandom.current().nextInt(l.size()));
-	}
-
-	/**
-	 * Get random integer between range
-	 */
-	public static int intBetween(int min, int max) {
-		return ThreadLocalRandom.current().nextInt(min, max + 1);
-	}
-
-	/**
-	 * Setup a user list with comparer baked into each user and a sorter into the
-	 * user list with a strategy pattern.
+	 * Setup UserList instance for testing different sorting algorithms.
 	 * 
-	 * Users are built with a builder pattern.
+	 * Comparison & sorting are handled by strategies.
+	 * 
+	 * Users constructed with a builder.
 	 */
 	public static UserList setup(IComparer<User> comparer, ISorter sorter) {
 		List<String> firstNames = new ArrayList<>(Arrays.asList(FIRST_NAMES));
@@ -52,8 +39,11 @@ public class Main {
 		UserList users = new UserList(sorter);
 
 		for (int i = 0; i < SAMPLE_SIZE; i++) {
-			User user = builder.setAge(intBetween(MIN_AGE, MAX_AGE)).setFirstName(sample(firstNames))
-					.setLastName(sample(lastNames)).build();
+			User user = builder
+					.setAge(intBetween(MIN_AGE, MAX_AGE))
+					.setFirstName(sample(firstNames))
+					.setLastName(sample(lastNames))
+					.build();
 
 			users.add(user);
 		}
@@ -140,5 +130,20 @@ public class Main {
 //
 //		Merge sort & asc full name comparison for 10000 users
 //		took 17 ms
+	}
+	
+
+	/**
+	 * Get random item from list
+	 */
+	public static <T> T sample(List<T> l) {
+		return l.get(ThreadLocalRandom.current().nextInt(l.size()));
+	}
+
+	/**
+	 * Get random integer between range
+	 */
+	public static int intBetween(int min, int max) {
+		return ThreadLocalRandom.current().nextInt(min, max + 1);
 	}
 }
