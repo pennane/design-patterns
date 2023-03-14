@@ -3,7 +3,7 @@ package visitor;
 import visitor.skilllevel.ISkillLevel;
 
 /**
- * Only reason to use this builder is to abstract the two way dependency
+ * Only reason to use this builder is to abstract away the two way dependency
  * initiation between player / skill level
  */
 public class PlayerBuilder {
