@@ -1,4 +1,4 @@
-package flyweight;
+package flyweight.javafxborder;
 
 import javafx.scene.layout.Border;
 import javafx.scene.layout.BorderStroke;

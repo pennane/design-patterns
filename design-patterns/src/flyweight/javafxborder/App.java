@@ -1,4 +1,4 @@
-package flyweight;
+package flyweight.javafxborder;
 
 import javafx.application.Application;
 import javafx.scene.Scene;
